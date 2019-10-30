@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tableau incrémentif</title>
+    <link type="text/css" rel="stylesheet" href="css/tableau.css">
+</head>
+<body>
+    <h1>FORMULAIRE DE CONTACT</h1>
+    <div class="block-left">
+        <form action="#" method="POST">
+            <div id="error">
+                
+            </div>
+            <div class="group">
+                <label>Nom *</label><br>
+                <input type="text" id="nom" class="require" placeholder="Ex: BOUKORO"/>
+            </div>
+
+            <div class="group">
+                <label>Prénom *</label><br>
+                <input type="text" id="prenom" class="require" placeholder="Ex: Jarce"/>
+            </div>
+
+            <div class="group">
+                <label>Email *</label><br>
+                <input type="email" id="email" class="require" placeholder="name@emai.co"/>
+            </div>
+
+            <div class="group">
+                <label>Adresse</label><br>
+                <input type="text" id="adresse" placeholder="2, av de tu peux le faire"/>
+            </div>
+
+            <div class="group">
+                <label>Téléphone *</label><br>
+                <input type="number" id="tel" class="require" placeholder="0662........."/>
+            </div>
+
+            <div class="group   ">
+                <label>Photo</label><br>
+                <input type="file" id="photo" name="photo"/>
+            </div>
+            <div class="group   ">
+                <button type="button" onclick="addDetail();" id="btn">ENREGISTRER</button>
+            </div>
+        </form>
+    </div>
+    <div class="block-right">
+        <table cellpadding="4px" border="1">
+            <thead>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>Adresse</th>
+                <th>Téléphone</th>
+                <th>Photo</th>
+                <th></th>
+            </thead>
+
+            <tbody>
+                <tr style="border:none;text-align:center;">
+                    <td colspan="7"><i>Vous n'avez pas de contacts enregistrés</i></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script type="text/javascript" src="js/tableau.js"></script>
+</body>
+</html>
