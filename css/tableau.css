@@ -84,3 +84,8 @@ tr th {
     margin: auto;
     text-align: center;
 }
+
+tfoot #total {
+    background-color: orangered;
+    color:white;  
+}

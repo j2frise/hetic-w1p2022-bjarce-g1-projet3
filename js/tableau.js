@@ -10,10 +10,11 @@ String.prototype.toUcWords = function() {
         function(s){
           return s.toUpperCase();
       });
-  };
+};
 
 var liste = document.querySelector('tbody');
 var annuaire;
+var total = 0;
 annuaire = new Array();
 
 function addDetail() 
@@ -56,7 +57,9 @@ function addDetail()
         contact.tel	            = tel;
         contact.photo           = photo;
         annuaire.push(contact);
-        showListe();	
+        showListe();
+        total++;
+        document.getElementById('total').innerHTML="Total "+ total;	
         document.getElementById('nom').value="";
         document.getElementById('prenom').value="";
         document.getElementById('email').value="";
