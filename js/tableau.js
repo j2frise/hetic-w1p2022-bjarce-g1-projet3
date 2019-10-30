@@ -69,9 +69,9 @@ function showListe()
     for(var i = 0; i < tailleTableau; i++) {
         
         contenu += '<tr>';
-        contenu += '<td>' +annuaire[i].nom + '</td>';
-        contenu += '<td>' + annuaire[i].prenom + '</td>';
-        contenu += '<td>' + annuaire[i].email + '</td>';
+        contenu += '<td>' +annuaire[i].nom.toUpperCase() + '</td>';
+        contenu += '<td>' + annuaire[i].prenom.ucFirst() + '</td>';
+        contenu += '<td>' + annuaire[i].email.toLowerCase() + '</td>';
         contenu += '<td>' + annuaire[i].adresse + '</td>';
         contenu += '<td>' + annuaire[i].tel + '</td>';
         contenu += '<td style="text-align:center"><img src="' + annuaire[i].photo + '"/></td>';
