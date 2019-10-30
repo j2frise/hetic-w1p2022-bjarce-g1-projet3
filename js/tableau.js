@@ -1,3 +1,17 @@
+// Transforme en majuscule la première lettre de la phrase
+String.prototype.toUcFirst = function() {
+    return this.substr(0,1).toUpperCase()+this.substr(1);
+}
+
+// Transforme en majuscule la première lettre de chaque mot
+String.prototype.toUcWords = function() {
+    str = this.toLowerCase();
+    return str.replace(/(^([a-zA-Z\p{M}]))|([ -][a-zA-Z\p{M}])/g,
+        function(s){
+          return s.toUpperCase();
+      });
+  };
+
 var liste = document.querySelector('tbody');
 var annuaire;
 annuaire = new Array();
@@ -70,7 +84,7 @@ function showListe()
         
         contenu += '<tr>';
         contenu += '<td>' +annuaire[i].nom.toUpperCase() + '</td>';
-        contenu += '<td>' + annuaire[i].prenom.ucFirst() + '</td>';
+        contenu += '<td>' + annuaire[i].prenom.toUcWords() + '</td>';
         contenu += '<td>' + annuaire[i].email.toLowerCase() + '</td>';
         contenu += '<td>' + annuaire[i].adresse + '</td>';
         contenu += '<td>' + annuaire[i].tel + '</td>';
