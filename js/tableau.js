@@ -85,8 +85,8 @@ function showListe()
         contenu += '<tr>';
         contenu += '<td>' +annuaire[i].nom.toUpperCase() + '</td>';
         contenu += '<td>' + annuaire[i].prenom.toUcWords() + '</td>';
-        contenu += '<td>' + annuaire[i].email.toLowerCase() + '</td>';
-        contenu += '<td>' + annuaire[i].adresse + '</td>';
+        contenu += '<td><a href="#">' + annuaire[i].email.toLowerCase() + '</a></td>';
+        contenu += '<td><i>' + annuaire[i].adresse + '</i></td>';
         contenu += '<td>' + annuaire[i].tel + '</td>';
         contenu += '<td style="text-align:center"><img src="' + annuaire[i].photo + '"/></td>';
         contenu += '<td style="text-align:center"><a href="javascript:();" onClick="remove(' + i + ')" title="Supprimer"><strong>X</strong></a></td>';
