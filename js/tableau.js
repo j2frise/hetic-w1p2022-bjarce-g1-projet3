@@ -76,6 +76,8 @@ function addDetail()
 function remove(index) {
     annuaire.splice(index,1);
     showListe();	
+    total--;
+    document.getElementById('total').innerHTML="Total "+ total;	
 }
 
 function showListe() 
