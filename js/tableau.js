@@ -117,4 +117,4 @@ const updateButton = async ()=>{
     return count.value;
 }
 
-console.log("Nombre de visite : "+updateCount());
+console.log("Nombre de visite : "+updateVisited());
