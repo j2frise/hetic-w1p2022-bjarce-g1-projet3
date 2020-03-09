@@ -10,14 +10,7 @@
     <p>0</p>
 
     <script>
-        const $counter = document.querySelector("p");
-        const updateVisited = async ()=>{
-            const data = await fetch("https://api.countapi.xyz/hit/jarceform.netlify.com/6b61eb96-e767-4dbc-9805-59efa4fef766");
-            const count = await data.json();
-            console.log(count);
-            $counter.innerHTML = count.value;
-        }
-        updateVisited();
+    
     </script>
 </body>
 </html>

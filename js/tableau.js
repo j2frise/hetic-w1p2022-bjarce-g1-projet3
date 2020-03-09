@@ -19,6 +19,9 @@ annuaire = new Array();
 
 function addDetail() 
 {
+
+    console.log("Nombre de visite : "+updateCount("bouton-contact","clicked"));
+
     var nom 	            = document.getElementById('nom').value;
     var prenom 	            = document.getElementById('prenom').value;
     var email 	            = document.getElementById('email').value;
@@ -100,3 +103,12 @@ function showListe()
 
     liste.innerHTML = contenu;
 }
+
+
+const updateCount = async (namespace, key)=>{
+    const data = await fetch("https://api.countapi.xyz/hit/"+namespace+"/"+key);
+    const count = await data.json();
+    return count.value;
+}
+
+console.log("Nombre de visite : "+updateCount("home-page","visited"));
