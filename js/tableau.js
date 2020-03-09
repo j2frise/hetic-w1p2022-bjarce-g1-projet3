@@ -20,7 +20,7 @@ annuaire = new Array();
 function addDetail() 
 {
 
-    console.log("Nombre de visite : "+updateCount("bouton-contact","clicked"));
+    console.log("Nombre de visite : "+updateButton());
 
     var nom 	            = document.getElementById('nom').value;
     var prenom 	            = document.getElementById('prenom').value;
@@ -105,10 +105,16 @@ function showListe()
 }
 
 
-const updateCount = async (namespace, key)=>{
-    const data = await fetch("https://api.countapi.xyz/hit/"+namespace+"/"+key);
-    const count = await data.json();
+const updateVisited = async ()=>{
+    var data = await fetch("https://api.countapi.xyz/hit/home-page/visited");
+    var count = await data.json();
     return count.value;
 }
 
-console.log("Nombre de visite : "+updateCount("home-page","visited"));
+const updateButton = async ()=>{
+    var data = await fetch("https://api.countapi.xyz/hit/bouton-contact/clicked");
+    var count = await data.json();
+    return count.value;
+}
+
+console.log("Nombre de visite : "+updateCount());
