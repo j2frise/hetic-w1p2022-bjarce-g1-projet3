@@ -11,11 +11,8 @@
 
     <script>
         const $counter = document.querySelector("p");
-        const updateVisited = async ()=>{
-            var value= await sessionStorage.visite;
-            $counter.innerHTML = value;
-        }
-        updateVisited();
+        const countVisit = sessionStorage.visite
+        $counter.innerHTML = countVisit.value;
     </script>
 </body>
 </html>

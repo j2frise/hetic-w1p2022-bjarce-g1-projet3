@@ -21,12 +21,12 @@ async function updateCount (namespace, key){
 */
 
 function updateCount (namespace, key){
-    const data = fetch("https://api.countapi.xyz/hit/"+namespace+"/"+key)
+    return fetch("https://api.countapi.xyz/hit/"+namespace+"/"+key)
                         .then(response => 
                             response.json()
                         )
                         .then(response => 
-                            alert(JSON.stringify(response))
+                           JSON.stringify(response)
                         )
                         .catch(error => 
                             alert("Erreur : " + error)
