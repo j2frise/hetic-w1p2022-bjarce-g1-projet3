@@ -10,7 +10,12 @@
     <p>0</p>
 
     <script>
-        console.log(sessionStorage.visite);
+        const $counter = document.querySelector("p");
+        const updateVisited = async ()=>{
+            var value= await sessionStorage.visite;
+            $counter.innerHTML = value;
+        }
+        updateVisited();
     </script>
 </body>
 </html>
