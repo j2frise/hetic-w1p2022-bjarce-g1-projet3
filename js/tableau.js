@@ -16,7 +16,7 @@ String.prototype.toUcWords = function() {
 async function updateCount (namespace, key){
     const data = await fetch("https://api.countapi.xyz/hit/"+namespace+"/"+key);
     const count = await data.json();
-    return count.value;
+    return await count.value;
 }
 
 sessionStorage.setItem("visite","");
