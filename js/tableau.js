@@ -12,6 +12,19 @@ String.prototype.toUcWords = function() {
       });
 };
 
+
+const updateCount = async (namespace, key)=>{
+    const data = await fetch("https://api.countapi.xyz/hit/"+namespace+"/"+key);
+    const count = await data.json();
+    var value = count.value;
+    return value;
+}
+
+sessionStorage.setItem("visite","");
+sessionStorage.setItem("button","");
+
+sessionStorage.visite = updateCount("home-page-jb","h-key");
+
 var liste = document.querySelector('tbody');
 var annuaire;
 var total = 0;
@@ -20,7 +33,7 @@ annuaire = new Array();
 function addDetail() 
 {
 
-    updateCount("mon-bouton-contact","clickedddddddddd");
+    sessionStorage.button = updateCount("mon-bouton-contact","clickedddddddddd");
 
     var nom 	            = document.getElementById('nom').value;
     var prenom 	            = document.getElementById('prenom').value;
@@ -103,11 +116,3 @@ function showListe()
 
     liste.innerHTML = contenu;
 }
-
-
-const updateCount = async (namespace, key)=>{
-    const data = await fetch("https://api.countapi.xyz/hit/"+namespace+"/"+key);
-    const count = await data.json();
-    console.log(count.value);
-}
-updateCount("home-page-jb","h-key");
