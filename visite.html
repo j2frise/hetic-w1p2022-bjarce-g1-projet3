@@ -10,9 +10,9 @@
     <p>0</p>
 
     <script>
-        console.log(localStorage.visite.then(response => console.log(response)));
+        console.log(localStorage.visite);
         const $counter = document.querySelector("p");
-        var countVisit = localStorage.visite.then(response => console.log(response));
+        var countVisit = localStorage.visite;
         $counter.innerHTML = countVisit.value;
     </script>
 </body>

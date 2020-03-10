@@ -12,31 +12,21 @@ String.prototype.toUcWords = function() {
       });
 };
 
-/*
-async function updateCount (namespace, key){
-    const data = await fetch("https://api.countapi.xyz/hit/"+namespace+"/"+key);
-    const count = await data.json();
-    return await count.value;
-}
-*/
+sessionStorage.setItem("visite",""); 
+sessionStorage.setItem("button","");
 
-function updateCount (namespace, key){
-    return fetch("https://api.countapi.xyz/hit/"+namespace+"/"+key)
-    .then((response) => response.json())
-    .then((responseData) => {
-        console.log(responseData);
-        return responseData;
-    })
-    .catch(error => console.warn(error));
+async function updateCountVisite (){
+    var data = await fetch("https://api.countapi.xyz/hit/home-page-jb/h-key");
+    var count = await data.json();
+    sessionStorage.visite = count.value;
+}
+async function updateCountClick (){
+    var data = await fetch("https://api.countapi.xyz/hit/mon-bouton-contact/clickedddddddddd");
+    var count = await data.json();
+    sessionStorage.button = count.value;
 }
 
-localStorage.setItem("visite","");
-localStorage.setItem("button","");
-
-localStorage.visite = updateCount("home-page-jb","h-key").then(response => console.log(response));
-
-var visit = localStorage.visite;
-alert(visit.value);
+updateCountVisite();
 
 var liste = document.querySelector('tbody');
 var annuaire;
@@ -46,7 +36,7 @@ annuaire = new Array();
 function addDetail() 
 {
 
-    localStorage.button = updateCount("mon-bouton-contact","clickedddddddddd").then(response => console.log(response));
+    updateCountClick();
 
     var nom 	            = document.getElementById('nom').value;
     var prenom 	            = document.getElementById('prenom').value;
