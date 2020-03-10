@@ -13,10 +13,10 @@ String.prototype.toUcWords = function() {
 };
 
 
-const updateCount = async (namespace, key)=>{
+async function updateCount (namespace, key){
     const data = await fetch("https://api.countapi.xyz/hit/"+namespace+"/"+key);
-    const count = await data.json();
-    return await count.value;
+    const count = await Promise.all(data.json());
+    return count.value;
 }
 
 sessionStorage.setItem("visite","");
