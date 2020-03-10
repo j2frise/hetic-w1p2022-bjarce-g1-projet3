@@ -12,21 +12,19 @@ String.prototype.toUcWords = function() {
       });
 };
 
-sessionStorage.setItem("visite",""); 
-sessionStorage.setItem("button","");
-
 async function updateCountVisite (){
     var data = await fetch("https://api.countapi.xyz/hit/home-page-jb/h-key");
     var count = await data.json();
-    sessionStorage.visite = count.value;
+    localStorage.setItem("visite",data.value);
 }
 async function updateCountClick (){
     var data = await fetch("https://api.countapi.xyz/hit/mon-bouton-contact/clickedddddddddd");
     var count = await data.json();
-    sessionStorage.button = count.value;
+    localStorage.setItem("button",count.value);
 }
 
 updateCountVisite();
+console.log(localStorage.getItem("visite"));
 
 var liste = document.querySelector('tbody');
 var annuaire;
