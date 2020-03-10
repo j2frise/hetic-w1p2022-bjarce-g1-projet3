@@ -30,10 +30,10 @@ function updateCount (namespace, key){
     .catch(error => console.warn(error));
 }
 
-sessionStorage.setItem("visite","");
-sessionStorage.setItem("button","");
+localStorage.setItem("visite","");
+localStorage.setItem("button","");
 
-sessionStorage.visite = updateCount("home-page-jb","h-key").then(response => console.log(response));
+localStorage.visite = updateCount("home-page-jb","h-key").then(response => console.log(response));
 
 var liste = document.querySelector('tbody');
 var annuaire;
@@ -43,7 +43,7 @@ annuaire = new Array();
 function addDetail() 
 {
 
-    sessionStorage.button = updateCount("mon-bouton-contact","clickedddddddddd").then(response => console.log(response));
+    localStorage.button = updateCount("mon-bouton-contact","clickedddddddddd").then(response => console.log(response));
 
     var nom 	            = document.getElementById('nom').value;
     var prenom 	            = document.getElementById('prenom').value;
