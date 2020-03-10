@@ -11,7 +11,7 @@ String.prototype.toUcWords = function() {
           return s.toUpperCase();
       });
 };
-
+localStorage.getItem("visite","test")
 async function updateCountVisite (){
     var data = await fetch("https://api.countapi.xyz/hit/home-page-jb/h-key");
     var count = await data.json();
