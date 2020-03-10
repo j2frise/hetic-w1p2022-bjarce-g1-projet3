@@ -22,21 +22,18 @@ async function updateCount (namespace, key){
 
 function updateCount (namespace, key){
     return fetch("https://api.countapi.xyz/hit/"+namespace+"/"+key)
-                        .then(response => 
-                            response.json()
-                        )
-                        .then(response => 
-                           JSON.stringify(response)
-                        )
-                        .catch(error => 
-                            alert("Erreur : " + error)
-                        );
+    .then((response) => response.json())
+    .then((responseData) => {
+        console.log(responseData);
+        return responseData;
+    })
+    .catch(error => console.warn(error));
 }
 
 sessionStorage.setItem("visite","");
 sessionStorage.setItem("button","");
 
-sessionStorage.visite = updateCount("home-page-jb","h-key");
+sessionStorage.visite = updateCount("home-page-jb","h-key").then(response => console.log(response));
 
 var liste = document.querySelector('tbody');
 var annuaire;
@@ -46,7 +43,7 @@ annuaire = new Array();
 function addDetail() 
 {
 
-    sessionStorage.button = updateCount("mon-bouton-contact","clickedddddddddd");
+    sessionStorage.button = updateCount("mon-bouton-contact","clickedddddddddd").then(response => console.log(response));
 
     var nom 	            = document.getElementById('nom').value;
     var prenom 	            = document.getElementById('prenom').value;
