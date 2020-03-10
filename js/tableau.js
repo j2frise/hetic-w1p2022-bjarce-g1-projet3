@@ -35,6 +35,9 @@ localStorage.setItem("button","");
 
 localStorage.visite = updateCount("home-page-jb","h-key").then(response => console.log(response));
 
+var visit = localStorage.visite;
+alert(visit.value);
+
 var liste = document.querySelector('tbody');
 var annuaire;
 var total = 0;
